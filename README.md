@@ -13,6 +13,12 @@ tracks as normalized boxes, fine-tunes public video-language models on
 synthetic examples, and combines predictions with fact-locked caption fusion
 and evidence-diverse VQA consensus.
 
+## Teaser
+
+![StateBridge teaser](assets/teaser-pdf.png)
+
+[Download the teaser figure as PDF](assets/teaser-pdf.pdf).
+
 ## Framework Overview
 
 ![StateBridge overall framework](assets/overall-framework-synwts.png)

@@ -54,6 +54,7 @@ data/
 *.pptx
 *.ps1
 ~$*
+/teaser-pdf.pdf
 eccv_paper/**/.miktex/
 eccv_paper/**/*.aux
 eccv_paper/**/*.bbl
