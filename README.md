@@ -13,6 +13,12 @@ tracks as normalized boxes, fine-tunes public video-language models on
 synthetic examples, and combines predictions with fact-locked caption fusion
 and evidence-diverse VQA consensus.
 
+## Framework Overview
+
+![StateBridge overall framework](assets/overall-framework-synwts.png)
+
+[Download the framework figure as PDF](assets/overall-framework-synwts.pdf).
+
 ## Official Result
 
 The paper reports the following synthetic-only submission:
@@ -44,6 +50,7 @@ synwts/                    Core Python package
 scripts/                   Dataset, fusion, and analysis utilities
 configs/release/           Sanitized LLaMA-Factory template configs
 docs/                      Extended workflow notes
+assets/                    README figures
 tests/                     Unit tests for parsing, fusion, facts, and repair
 ECCV_AICity26_Track2.pdf   Paper PDF
 competition_details.txt    Local copy of the challenge description
