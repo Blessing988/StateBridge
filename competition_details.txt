@@ -1,0 +1,114 @@
+Details of the Challenge:
+
+Challenge Track 2. Transportation Safety Understanding and Captioning (Sim2Real): Using synthetic traffic datasets, participants develop models to understand and describe safety-critical scenarios in the real world. Tasks include video captioning and visual question answering (VQA) focused on pedestrian-centric risk and causal reasoning. Evaluation metrics include BLEU, METEOR, ROUGE-L, CIDEr, and VQA accuracy. Top-performing teams are required to submit Dockerized solutions for reproducibility and deployment validation.
+
+2026 Challenge Track Description
+Track 2: Transportation Safety Understanding and Captioning (Sim2Real)
+
+Overview
+Building on the success of previous years, Track 2 of the 2026 AI City Challenge focuses on the Sim2Real challenge: bridging the gap between synthetic training environments and real-world application. Participants must train and fine-tune their models exclusively using synthetic “Digital Twin” data and evaluate their performance on a real-world video test set.
+
+The task centers on long-form, fine-grained video captioning and Visual Question Answering (VQA) for traffic safety scenarios, with a particular emphasis on pedestrian-involved accidents. Participants are challenged to describe the continuous moments leading up to an incident, as well as normal traffic flow, from multiple camera viewpoints. The goal is to produce detailed structured descriptions covering the location, attention, behavior, and surrounding context of all involved agents.
+
+The Sim2Real Context
+To facilitate this, we provide a “near” Digital Twin of the WTS dataset. While the synthetic environments provide a high-fidelity geometric match to the real-world test locations, participants should note the following characteristics of the synthetic data:
+
+Environmental Fidelity: The static environment (roads, buildings, layouts) is a close geometric proximity to the real-world locations.
+Character Dynamics: Due to simulation constraints, synthetic character poses (e.g., specific falling patterns or jumping behaviors) may not perfectly replicate real-world physics.
+Object Limitations: Synthetic characters currently do not hold specific hand-held objects (e.g., cell phones, umbrellas) that appear in the real-world WTS test set.
+The core challenge is to build models robust enough to translate these simulated safety scenarios to the nuanced reality of human behavior.
+
+Dataset and Data Format
+Training & Validation: A Digital Twin version of the WTS dataset, synthetically generated via NVIDIA Isaac Sim.
+Testing: Real-world WTS dataset videos.
+Format: 1080p resolution at 30 fps.
+Annotations:
+Format: Same format as the WTS dataset. However, note that no 3D gaze data is provided.
+Captions: Generated from a checklist of 170+ traffic-related items.
+Temporal Segments: Scenarios are divided into approximately 5 segments (Pre-recognition, Recognition, Judgment, Action, and Avoidance). Segment timestamps will be provided for the test set.
+Instance Information: Bounding boxes for target pedestrians and vehicles are provided for all frames in the synthetic dataset and for some key frames in the real-world dataset.
+Tasks
+Sub-Task 1: Fine-Grained Video Captioning
+
+Teams must generate two distinct captions (one for the pedestrian and one for the vehicle) for each segment of a traffic event. Descriptions must focus on four key pillars:
+
+Location: Spatial positioning within the scene.
+Attention: Directional focus of the agent.
+Behavior: Specific actions or maneuvers.
+Context: Relationship with the surrounding environment.
+Sub-Task 2: Traffic Visual Question Answering (VQA)
+
+Teams will answer multiple-choice questions (selected from ~180 types, including direction, position, and attributes) to demonstrate a holistic, structured understanding of the scene.
+
+Submission Format
+We will use the same submission format as Track 2 in the 2025 AI City Challenge.
+
+Sub-Task 1: Captioning
+
+Results must be provided per scenario. For multi-view scenarios, use the scenario index as the key. For scenarios in the normal_trimmed folder, every single video in the test set requires caption results.
+
+Note: Unlike the training data, the segment timestamps are not required for the test data submission. The segment labels (e.g., “4”, “3”) are known and will be provided.
+
+{
+    "20230707_12_SN17_T1": [  
+        {
+            "labels": ["4"],
+            "caption_pedestrian": "The pedestrian stands still on the left, looking toward the approaching traffic...",
+            "caption_vehicle": "The vehicle was positioned diagonally to the intersection, slowing down..."
+        },
+        {
+            "labels": ["3"],
+            "caption_pedestrian": "The pedestrian begins to step off the curb...",
+            "caption_vehicle": "The vehicle continues its approach without significant deceleration..."
+        },
+        {
+            "labels": ["2"],
+            "caption_pedestrian": "...",
+            "caption_vehicle": "..."
+        },
+        {
+            "labels": ["1"],
+            "caption_pedestrian": "...",
+            "caption_vehicle": "..."
+        },
+        {
+            "labels": ["0"],
+            "caption_pedestrian": "...",
+            "caption_vehicle": "..."
+        }
+    ]
+}
+
+Sub-Task 2: VQA
+
+The results are required per scenario/question. Participants must provide the predicted option label as follows:
+
+[
+  {
+    "id": "3c8c80e3-33f1-4133-a86c-1192c8a26159",
+    "correct": "a"
+  },
+  {
+    "id": "be2f113a-c387-4987-befd-32a9c6dc488a",
+    "correct": "b"
+  }
+]
+
+where id is the question id in the test set and correct is the predicted option label.
+
+Evaluation and Rules
+The winner will be determined by the mean score of Sub-Task 1 and Sub-Task 2.
+
+Sub-Task 1: Average of BLEU-4, METEOR, ROUGE-L, and CIDEr.
+Sub-Task 2: Accuracy (Correct Answers / Total Questions).
+Generative Requirement: This is a generative task. We are looking for models that derive language from visual input. Methods that utilize retrieval (e.g., pulling the “closest” caption from the training set based on feature similarity) are ineligible for awards.
+
+Data Access
+Synthetic Train/Val: mlcglab/synwts (HuggingFace)[https://huggingface.co/datasets/mlcglab/synwts].
+Real-World Test Set: WTS Dataset (GitHub) [https://github.com/woven-visionai/wts-dataset].
+Usage Rule: Teams must train/fine-tune only on synthetic data. Use of real-world WTS training/validation videos or models pre-trained on the WTS dataset is strictly prohibited.
+Note: The synwts dataset  only includes the train and val sets of the data. The test set will be the “internal” or “main” subset of the WTS Dataset. Note that the WTS dataset also contains a BDD_PC_5K subset in its train/val/test splits that will not be used for this challenge since synthetic versions of those scenarios are not included in our training and validation sets. 
+
+
+
+

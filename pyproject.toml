@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "statebridge-synwts"
+version = "0.1.0"
+description = "StateBridge tools for synthetic-to-real traffic safety captioning and VQA."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "SMART Lab" }
+]
+dependencies = [
+  "numpy>=1.23",
+  "Pillow>=9.0",
+  "tqdm>=4.64",
+]
+
+[project.optional-dependencies]
+metrics = [
+  "nltk",
+  "pycocoevalcap",
+]
+video = [
+  "opencv-python-headless",
+  "av",
+  "decord",
+]
+vlm = [
+  "torch",
+  "transformers",
+  "accelerate",
+  "peft",
+  "qwen-vl-utils",
+]
+dev = [
+  "pytest",
+]
+
+[project.scripts]
+synwts = "synwts.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["synwts*"]

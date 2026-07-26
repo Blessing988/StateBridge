@@ -1,0 +1,52 @@
+{
+  "global": {
+    "pedestrian": [
+      "age_group",
+      "height",
+      "upper_body_type",
+      "upper_body_color",
+      "lower_body_type",
+      "lower_body_color"
+    ],
+    "environment": [
+      "weather",
+      "brightness"
+    ],
+    "road": [
+      "surface_condition",
+      "inclination",
+      "surface_type",
+      "traffic_volume",
+      "road_type",
+      "lane_count",
+      "formation"
+    ]
+  },
+  "phase": {
+    "pedestrian": [
+      "body_orientation",
+      "position_relative_to_vehicle",
+      "distance_to_vehicle",
+      "line_of_sight",
+      "visual_status",
+      "direction_of_travel",
+      "awareness_of_vehicle",
+      "action",
+      "fine_grained_action",
+      "speed"
+    ],
+    "vehicle": [
+      "position_relative_to_pedestrian",
+      "distance_to_pedestrian",
+      "field_of_view",
+      "action",
+      "speed"
+    ],
+    "risk": [
+      "normal_or_incident",
+      "collision_state",
+      "time_to_conflict",
+      "avoidance_success"
+    ]
+  }
+}

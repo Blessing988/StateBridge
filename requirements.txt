@@ -1,0 +1,17 @@
+numpy>=1.23
+Pillow>=9.0
+tqdm>=4.64
+
+# Optional video/VLM extras used by full HPC runs:
+# opencv-python-headless
+# av
+# decord
+# qwen-vl-utils
+# torch
+# transformers
+# accelerate
+# peft
+
+# Optional official-like caption metrics:
+# pycocoevalcap
+# nltk

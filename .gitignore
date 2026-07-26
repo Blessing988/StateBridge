@@ -1,0 +1,95 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environments and local config
+.env
+.venv/
+venv/
+env/
+*.local
+*.secret
+.agents/
+.codex/
+AGENTS.md
+skills-lock.json
+
+# Generated datasets, predictions, submissions, and logs
+outputs/
+results/
+tmp/
+synwts_outputs/
+LLaMA-Factory/
+generated_predictions.jsonl
+WTS_VQA_PUBLIC_TEST.json
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+trainer_log.jsonl
+all_results.json
+predict_results.json
+
+# Challenge/video data should be downloaded separately.
+sample_data/
+sample_data/videos/
+data/
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.gif
+
+# Local presentation and paper build artifacts
+*.pptx
+*.ps1
+~$*
+eccv_paper/**/.miktex/
+eccv_paper/**/*.aux
+eccv_paper/**/*.bbl
+eccv_paper/**/*.blg
+eccv_paper/**/*.log
+eccv_paper/**/*.out
+eccv_paper/**/*.toc
+eccv_paper/**/*.synctex.gz
+
+# Do not redistribute copied papers or unrelated challenge material.
+sample 2025 aicity papers/
+eccv_paper/ECCV-paper-template/
+eccv_paper/sample papers/
+eccv_paper/ECCV_AICity26_Track5/
+eccv_paper/ECCV_AICity26_Track2/figures/
+eccv_paper/ECCV_AICity26_Track2/main.pdf
+eccv_paper/ECCV_AICity26_Track2/PAPER_POSITIONING.md
+
+# Keep public release aligned with the synthetic-only paper claim.
+configs/*.pbs
+configs/*.sh
+configs/*.yaml
+configs/vqa_type_fusion_*.json
+!configs/release/
+!configs/release/*.yaml
+configs/model_bakeoff/
+configs/model_experiments/
+configs/true_segments/
+docs/*.md
+!docs/REPRODUCIBILITY.md
+!docs/RESULTS.md
+scripts/*.sh
+scripts/*.ps1
+scripts/hpc_*
+scripts/write_true_segment_configs.py
+synwts/real_wts.py
+scripts/*real*
+scripts/*pseudo*
+scripts/*syn_real*

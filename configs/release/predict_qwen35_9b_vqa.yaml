@@ -1,0 +1,21 @@
+# Public-test VQA inference with a synthetic-trained Qwen3.5-9B adapter.
+stage: sft
+do_predict: true
+model_name_or_path: Qwen/Qwen3.5-9B
+adapter_name_or_path: /path/to/synwts_outputs/runs/qwen35_9b_joint_phase_bbox_lora
+eval_dataset: wts_public_test_vqa_fast
+dataset_dir: /path/to/LLaMA-Factory/data
+template: qwen3_5_nothink
+finetuning_type: lora
+output_dir: /path/to/synwts_outputs/predict/qwen35_9b_joint_vqa
+overwrite_cache: true
+overwrite_output_dir: true
+cutoff_len: 8192
+video_max_pixels: 65536
+preprocessing_num_workers: 8
+per_device_eval_batch_size: 1
+predict_with_generate: true
+max_new_tokens: 8
+do_sample: false
+bf16: true
+report_to: none

@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the StateBridge paper."
+title: "StateBridge: Phase- and Track-Grounded Reasoning for Synthetic-to-Real Traffic Safety Captioning and VQA"
+authors:
+  - family-names: "SMART Lab"
+year: 2026
+keywords:
+  - traffic safety understanding
+  - video-language models
+  - synthetic-to-real transfer
+  - visual question answering
+repository-code: "https://github.com/Blessing988/StateBridge"
