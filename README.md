@@ -24,6 +24,19 @@ The paper reports the following synthetic-only submission:
 All reported trainable components are adapted only on SynWTS synthetic
 train/validation data. Real Track 2 test videos are used only for inference.
 
+## Data Access and Rules
+
+- **Synthetic train/validation data:** [mlcglab/synwts on HuggingFace](https://huggingface.co/datasets/mlcglab/synwts)
+- **Real-world test data:** [WTS Dataset on GitHub](https://github.com/woven-visionai/wts-dataset)
+
+Teams must train and fine-tune only on synthetic data. Real-world WTS
+training/validation videos and models pretrained on the WTS dataset are not
+used by the paper-reported StateBridge pipeline. The SynWTS release contains
+only train and validation splits; the challenge test set is the `internal` or
+`main` subset of the WTS Dataset. If a downloaded WTS tree also contains the
+`BDD_PC_5K` subset, exclude it for this challenge because corresponding
+synthetic versions are not included in SynWTS train/validation data.
+
 ## Repository Contents
 
 ```text
@@ -35,10 +48,6 @@ tests/                     Unit tests for parsing, fusion, facts, and repair
 ECCV_AICity26_Track2.pdf   Paper PDF
 competition_details.txt    Local copy of the challenge description
 ```
-
-Large or restricted artifacts are intentionally not tracked: challenge videos,
-generated clips, model checkpoints, LoRA adapters, public-test JSON copies,
-prediction files, submission zips, and local HPC job logs.
 
 ## Installation
 
