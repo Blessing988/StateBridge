@@ -65,6 +65,7 @@ eccv_paper/**/*.synctex.gz
 
 # Do not redistribute copied papers or unrelated challenge material.
 sample 2025 aicity papers/
+eccv_paper/
 eccv_paper/ECCV-paper-template/
 eccv_paper/sample papers/
 eccv_paper/ECCV_AICity26_Track5/

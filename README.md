@@ -1,9 +1,11 @@
-# StateBridge
+# StateBridge: Phase- and Track-Grounded Reasoning for Synthetic-to-Real Traffic Video Captioning and VQA
 
-StateBridge is a reproducible code release for AI City Challenge 2026 Track 2,
-Transportation Safety Understanding and Captioning (Sim2Real). The task trains
-on synthetic SynWTS videos and evaluates on real WTS traffic videos with two
-outputs: phase-level pedestrian/vehicle captions and multiple-choice VQA.
+This repository is the code release for **StateBridge: Phase- and
+Track-Grounded Reasoning for Synthetic-to-Real Traffic Video Captioning and
+VQA**, developed for AI City Challenge 2026 Track 2, Transportation Safety
+Understanding and Captioning (Sim2Real). The task trains on synthetic SynWTS
+videos and evaluates on real WTS traffic videos with two outputs: phase-level
+pedestrian/vehicle captions and multiple-choice VQA.
 
 The method transfers structured traffic evidence instead of simulator
 appearance. It builds phase-aligned clips, summarizes pedestrian and vehicle
@@ -30,8 +32,7 @@ scripts/                   Dataset, fusion, and analysis utilities
 configs/release/           Sanitized LLaMA-Factory template configs
 docs/                      Extended workflow notes
 tests/                     Unit tests for parsing, fusion, facts, and repair
-eccv_paper/ECCV_AICity26_Track2/
-                            Paper source and figures
+ECCV_AICity26_Track2.pdf   Paper PDF
 competition_details.txt    Local copy of the challenge description
 ```
 
@@ -322,7 +323,7 @@ challenge dataset.
 
 ```bibtex
 @inproceedings{statebridge2026,
-  title     = {StateBridge: Phase- and Track-Grounded Reasoning for Synthetic-to-Real Traffic Safety Captioning and VQA},
+  title     = {StateBridge: Phase- and Track-Grounded Reasoning for Synthetic-to-Real Traffic Video Captioning and VQA},
   author    = {SMART Lab},
   booktitle = {AI City Challenge Workshop, ECCV},
   year      = {2026}
